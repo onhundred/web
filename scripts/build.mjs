@@ -154,7 +154,8 @@ function partials(t, view, config) {
   // Shown for 1 cycle after the log adopts a new protocol version, as of build time.
   const change = view.protocolChange;
   const num = (n) => (lang === "es" ? String(n).replace(".", ",") : String(n));
-  const changeNote = changeIsCurrent(change, new Date().toISOString().slice(0, 10))
+  const changeNote =
+    changeIsCurrent(change, new Date().toISOString().slice(0, 10)) && change.delegatedBefore !== change.delegatedAfter
     ? `<p class="change-note">${esc(
         fill(t.hero.changeNote, {
           to: change.to,
