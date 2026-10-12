@@ -1,0 +1,23 @@
+{
+  "name": "onhundred-web",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Onhundred home page: static, prerendered, EN + ES, built for Cloudflare Pages.",
+  "engines": {
+    "node": ">=20.10"
+  },
+  "scripts": {
+    "build": "node scripts/build.mjs && node scripts/check-budget.mjs",
+    "budget": "node scripts/check-budget.mjs",
+    "sync-app": "node scripts/sync-app-assets.mjs",
+    "test": "node --test app/test/*.test.mjs",
+    "perf": "node scripts/perf.mjs",
+    "preview": "python3 -m http.server 8788 -d dist",
+    "fonts": "sh scripts/subset-fonts.sh"
+  },
+  "devDependencies": {
+    "chrome-launcher": "^1.2.2",
+    "lighthouse": "^13.5.0"
+  }
+}

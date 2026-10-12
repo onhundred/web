@@ -1,0 +1,7 @@
+{
+ "prompt": "A mobile landing page for Onhundred, a public social experiment, shown as the phone's first screen edge to edge at 390x844, crisp readable text, no device frame, no browser chrome, no hands or desk. [figure-led: giant 81% OF HIM IS STILL HIM figure tagged SAMPLE, 100-cell meter in RELATIONSHIPS/PERSONAL/COMPANY groups, one-line confession, email field + OBSERVE, MAP -> DELEGATE -> REVIEW peeking below] Reference: existing mockup screenshot for palette, type and component character only.",
+ "tool": "cursor GenerateImage",
+ "reference": ".impeccable/mocks/reference/mockup-mobile.png",
+ "card": "whats-left",
+ "approved": true
+}

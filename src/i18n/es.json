@@ -1,0 +1,131 @@
+{
+  "lang": "es",
+  "path": "/es/",
+  "meta": {
+    "title": "Onhundred: qué queda de una persona cuando la IA dirige su vida",
+    "description": "Experimento social 001. Un fundador entrega a la IA su empresa, su dinero y la forma en que cuida a las personas que quiere, en público. Mira qué queda de él.",
+    "ogTitle": "El {pct}% de él sigue siendo él. Por ahora.",
+    "locale": "es_LA"
+  },
+  "a11y": {
+    "skip": "Ir a la suscripción",
+    "gridLabel": "Cuadrícula de delegación: cada cuadro es un loop de su vida",
+    "showAll": "Mostrar todas las áreas"
+  },
+  "header": {
+    "brandTail": "HUNDRED · EXPERIMENTO SOCIAL 001",
+    "live": "EN VIVO · CICLO {cycle} · DÍA {day}"
+  },
+  "hero": {
+    "figureCaption": "DE ÉL SIGUE SIENDO ÉL",
+    "areaCaptions": {
+      "relationships": "DE SUS RELACIONES AÚN SON SUYAS",
+      "personal": "DE SU VIDA PERSONAL AÚN ES SUYA",
+      "company": "DE SU EMPRESA AÚN ES SUYA"
+    },
+    "sample": "MUESTRA",
+    "sampleNote": "Datos de muestra hasta publicar la bitácora",
+    "confession1": "La IA casi destruye mi empresa.",
+    "confession2": "Así que le entrego mi vida a la IA."
+  },
+  "areas": {
+    "relationships": "RELACIONES",
+    "personal": "PERSONAL",
+    "company": "EMPRESA"
+  },
+  "observe": {
+    "label": "Tu correo",
+    "placeholder": "tu correo",
+    "button": "OBSERVAR",
+    "note": "Una bitácora de observación por semana.",
+    "privacy": "Sin spam. Te das de baja con un clic."
+  },
+  "stages": {
+    "label": "Etapa del ciclo",
+    "map": "MAPEAR",
+    "delegate": "DELEGAR",
+    "review": "REVISAR",
+    "mapNote": "Mapear: cada loop de su vida se encuentra y se nombra.",
+    "delegateNote": "Delegar: los loops pasan a agentes, un poco o por completo.",
+    "reviewNote": "Revisar: qué cambió este ciclo, qué se rompió, qué queda."
+  },
+  "states": {
+    "heading": "Cuánto de cada cuadro pertenece a la IA",
+    "unmapped": "SIN MAPEAR",
+    "unmappedNote": "aún sin revisar",
+    "mapped": "MAPEADO",
+    "mappedNote": "nombrado, sigue siendo suyo",
+    "assisted": "ASISTIDO",
+    "assistedNote": "Ayúdame.",
+    "delegated": "DELEGADO",
+    "delegatedNote": "Hazlo, yo apruebo.",
+    "autonomous": "AUTÓNOMO",
+    "autonomousNote": "Hazlo solo."
+  },
+  "tip": {
+    "private": "Loop privado",
+    "flags": {
+      "measuring": "MIDIENDO",
+      "experimenting": "EXPERIMENTANDO",
+      "holding": "MANTENIENDO"
+    },
+    "outcomes": {
+      "achieved": "Última etapa lograda",
+      "notAchieved": "Última etapa no lograda",
+      "terminated": "Última etapa detenida",
+      "dropped": "Bajó de nivel"
+    }
+  },
+  "manifesto": {
+    "question": "¿Qué queda de una persona cuando todo se delega?",
+    "p1": "La IA casi destruye mi empresa. La tuya podría ser la siguiente.",
+    "p2": "Así que le entrego mi vida a la IA. Toda: mi empresa, mi dinero y la forma en que cuido a las personas que quiero.",
+    "p3": "Veamos qué queda de mí.",
+    "signature": "ALE SÁNCHEZ, SUJETO 001",
+    "tagline": "DELEGA LA AGENCIA. RECUPERA TU VIDA."
+  },
+  "experiments": {
+    "heading": "EXPERIMENTOS",
+    "sample": "MUESTRA",
+    "bet": "APUESTA",
+    "stage": "ETAPA {n} · {level}",
+    "status": {
+      "registered": "REGISTRADO",
+      "running": "EN CURSO",
+      "holding": "MANTENIENDO",
+      "reached": "NIVEL ALCANZADO",
+      "notAchieved": "NO LOGRADO",
+      "terminated": "DETENIDO",
+      "concluded": "CONCLUIDO"
+    },
+    "conclusion": {
+      "confirmed": "APUESTA CONFIRMADA",
+      "refuted": "APUESTA REFUTADA",
+      "unclear": "NO CONCLUYENTE"
+    }
+  },
+  "join": {
+    "observeHeading": "Mira cómo baja el número",
+    "observeBody": "Una bitácora de observación por semana: qué se delegó, qué se rompió, qué queda.",
+    "submitHeading": "Mete a tu empresa en el experimento",
+    "submitBody": "Cada ciclo entran pocas empresas. Cuéntanos quiénes son; respondemos a todas.",
+    "company": "Empresa",
+    "companyPlaceholder": "nombre de la empresa",
+    "workEmail": "Correo de trabajo",
+    "workEmailPlaceholder": "tu@empresa.com",
+    "website": "Sitio web",
+    "websitePlaceholder": "empresa.com",
+    "submitButton": "POSTULAR MI EMPRESA",
+    "protocolHeading": "Copia el protocolo",
+    "protocolBody": "Cada agente y cada regla del experimento es abierto.",
+    "protocolLink": "LEER EL PROTOCOLO",
+    "vote": "Elige el próximo experimento",
+    "voteSoon": "La votación del próximo experimento abre con el Ciclo 1."
+  },
+  "footer": {
+    "consent": "PROTOCOLO DE CONSENTIMIENTO: todas las personas involucradas lo saben y pueden detenerlo. Nunca hay menores como sujetos. Sin datos clínicos. No lo intentes en casa.",
+    "subject": "SUJETO 001",
+    "language": "Read in English",
+    "languageShort": "EN"
+  }
+}

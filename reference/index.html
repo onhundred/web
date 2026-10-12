@@ -1,0 +1,222 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Onhundred, cycle view</title>
+<script src="./vendor/react.js"></script>
+<script src="./vendor/react-dom.js"></script>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@300;400;700;900&amp;family=IBM+Plex+Mono:wght@400;500&amp;display=swap">
+<style>
+body{margin:0;background:#0A0A09}
+a{color:#E8E8E2}a:hover{color:#C6F432}
+@keyframes pulse{0%{opacity:1}50%{opacity:.2}100%{opacity:1}}
+.pulse{animation:pulse 1.8s ease-in-out infinite}
+</style>
+</helmet>
+<div style="background: #0A0A09; color: #E8E8E2; font-family: 'Archivo', 'Helvetica Neue', sans-serif; min-height: 100vh">
+<div style="max-width: 1040px; margin: 0 auto; padding: 0 28px">
+
+<header style="padding: 28px 0; display: flex; flex-wrap: wrap; justify-content: space-between; gap: 12px; font-family: 'IBM Plex Mono', monospace; font-size: 12px; letter-spacing: 0.14em; color: #8C9087">
+<span><span style="color: #E8E8E2">ON</span>HUNDRED · SOCIAL EXPERIMENT 001</span>
+<span style="display: flex; align-items: center; gap: 8px"><span class="pulse" style="width: 7px; height: 7px; border-radius: 999px; background: {{accent}}"></span>LIVE · CYCLE 1 · DAY [X]</span>
+</header>
+
+<section aria-label="Manifesto and grid" style="padding: 88px 0 96px; display: flex; flex-wrap: wrap; align-items: center; gap: 64px; position: relative">
+<div style="flex: 1 1 400px; min-width: 0; display: flex; flex-direction: column; gap: 28px">
+<p style="margin: 0; font-family: 'IBM Plex Mono', monospace; font-size: 12px; letter-spacing: 0.14em; color: #8C9087">FROM THE SUBJECT'S NOTES, DAY 1</p>
+<div style="display: flex; flex-direction: column; gap: 22px; font-size: clamp(24px, 2.6vw, 32px); font-weight: 300; line-height: 1.3; letter-spacing: -0.01em">
+<p style="margin: 0">AI nearly destroyed my company. Yours could be next.</p>
+<p style="margin: 0">So I'm handing my life to AI. All of it: my company, my money, and the way I take care of the people I love.</p>
+<p style="margin: 0; font-weight: 700">Let's see what's left of me.</p>
+</div>
+<a href="#manifesto" style="align-self: flex-start; font-family: 'IBM Plex Mono', monospace; font-size: 13px; letter-spacing: 0.12em; text-decoration: none; border-bottom: 1px solid #E8E8E2; padding-bottom: 4px">READ THE FULL MANIFESTO</a>
+</div>
+<div style="flex: 0 1 auto; min-width: 0; display: flex; flex-direction: column; align-items: center; gap: 22px; margin: 0 auto">
+<div style="display: flex; flex-direction: column; align-items: center; gap: 8px">
+<span style="font-family: 'IBM Plex Mono', monospace; font-size: 12px; letter-spacing: 0.16em; color: #8C9087">CYCLE {{cycle}}</span>
+<div aria-label="Cycle stage" style="display: flex; flex-wrap: wrap; align-items: center; justify-content: center; gap: 4px 6px; font-family: 'IBM Plex Mono', monospace; font-size: 12px; letter-spacing: 0.14em">
+<sc-for list="{{stages}}" as="st" hint-placeholder-count="3">
+<button type="button" onMouseEnter="{{st.enter}}" onMouseLeave="{{st.leave}}" onFocus="{{st.enter}}" onBlur="{{st.leave}}" aria-current="{{st.current}}" style="min-height: 32px; padding: 0 10px; border: 1px solid {{st.border}}; border-radius: 999px; background: transparent; color: {{st.color}}; font-family: inherit; font-size: 12px; letter-spacing: 0.14em; cursor: default">{{st.label}}</button>
+<span style="color: #3A3D37">{{st.arrow}}</span>
+</sc-for>
+</div>
+</div>
+
+<div style="display: flex; align-items: flex-start; gap: 16px">
+<div style="display: flex; flex-direction: column; align-items: center; gap: 10px">
+<div aria-hidden="true" style="display: grid; grid-template-columns: repeat(3, 24px); gap: 5px">
+<sc-for list="{{rel}}" as="c" hint-placeholder-count="30">
+<div style="width: 24px; height: 24px; border-radius: 2px; box-sizing: border-box; background: {{c.bg}}; border: 1px {{c.bstyle}} {{c.line}}; opacity: {{c.op}}; transition: opacity 0.2s ease"></div>
+</sc-for>
+</div>
+<span style="font-family: 'IBM Plex Mono', monospace; font-size: 11px; letter-spacing: 0.12em; color: #8C9087">RELATIONSHIPS</span>
+</div>
+<div style="display: flex; flex-direction: column; align-items: center; gap: 10px">
+<div aria-hidden="true" style="display: grid; grid-template-columns: repeat(3, 24px); gap: 5px">
+<sc-for list="{{per}}" as="c" hint-placeholder-count="30">
+<div style="width: 24px; height: 24px; border-radius: 2px; box-sizing: border-box; background: {{c.bg}}; border: 1px {{c.bstyle}} {{c.line}}; opacity: {{c.op}}; transition: opacity 0.2s ease"></div>
+</sc-for>
+</div>
+<span style="font-family: 'IBM Plex Mono', monospace; font-size: 11px; letter-spacing: 0.12em; color: #8C9087">PERSONAL</span>
+</div>
+<div style="display: flex; flex-direction: column; align-items: center; gap: 10px">
+<div aria-hidden="true" style="display: grid; grid-template-columns: repeat(4, 24px); gap: 5px">
+<sc-for list="{{com}}" as="c" hint-placeholder-count="40">
+<div style="width: 24px; height: 24px; border-radius: 2px; box-sizing: border-box; background: {{c.bg}}; border: 1px {{c.bstyle}} {{c.line}}; opacity: {{c.op}}; transition: opacity 0.2s ease"></div>
+</sc-for>
+</div>
+<span style="font-family: 'IBM Plex Mono', monospace; font-size: 11px; letter-spacing: 0.12em; color: #8C9087">COMPANY</span>
+</div>
+</div>
+<div aria-label="Legend" style="display: flex; flex-wrap: wrap; justify-content: center; gap: 4px 6px; max-width: 420px">
+<sc-for list="{{legend}}" as="l" hint-placeholder-count="5">
+<button type="button" onMouseEnter="{{l.enter}}" onMouseLeave="{{l.leave}}" onFocus="{{l.enter}}" onBlur="{{l.leave}}" style="display: flex; align-items: center; gap: 8px; min-height: 36px; padding: 0 10px; border: none; border-radius: 6px; background: {{l.chipBg}}; color: {{l.color}}; font-family: 'IBM Plex Mono', monospace; font-size: 12px; letter-spacing: 0.06em; cursor: default">
+<span style="width: 12px; height: 12px; border-radius: 2px; box-sizing: border-box; background: {{l.bg}}; border: 1px {{l.bstyle}} {{l.line}}"></span>{{l.label}} <span style="color: #8C9087">{{l.count}}</span>
+</button>
+</sc-for>
+</div>
+<p style="margin: 0; font-family: 'IBM Plex Mono', monospace; font-size: 12px; color: #8C9087; text-align: center">Hover a phase to see where it lives.</p>
+</div>
+</section>
+<section aria-label="The question" style="padding: 120px 0; text-align: center">
+<p style="margin: 0 auto; max-width: 820px; font-size: clamp(32px, 5vw, 64px); font-weight: 900; line-height: 1.05; letter-spacing: -0.03em">What remains of a person when everything is delegated?</p>
+<p style="margin: 28px 0 0; font-family: 'IBM Plex Mono', monospace; font-size: 13px; letter-spacing: 0.14em; color: #8C9087">DELEGATE AGENCY. RECLAIM YOUR LIFE.</p>
+</section>
+
+<section aria-label="Experiments" style="padding: 72px 0; border-top: 1px solid #1F211E; display: flex; flex-direction: column; gap: 8px">
+<p style="margin: 0 0 20px; font-family: 'IBM Plex Mono', monospace; font-size: 12px; letter-spacing: 0.14em; color: #8C9087">EXPERIMENTS</p>
+<a href="#exp-01" style="text-decoration: none; display: flex; flex-wrap: wrap; align-items: baseline; gap: 6px 24px; padding: 18px 0; border-bottom: 1px solid #1F211E"><span style="font-family: 'IBM Plex Mono', monospace; font-size: 13px; color: #8C9087; flex: 0 0 64px">EXP-01</span><span style="flex: 1 1 420px; font-size: 22px; font-weight: 400">Can an agent remember people for him?</span><span style="font-family: 'IBM Plex Mono', monospace; font-size: 12px; letter-spacing: 0.1em; color: {{accent}}">RUNNING</span></a>
+<a href="#exp-02" style="text-decoration: none; display: flex; flex-wrap: wrap; align-items: baseline; gap: 6px 24px; padding: 18px 0; border-bottom: 1px solid #1F211E"><span style="font-family: 'IBM Plex Mono', monospace; font-size: 13px; color: #8C9087; flex: 0 0 64px">EXP-02</span><span style="flex: 1 1 420px; font-size: 22px; font-weight: 400">Can a company survive without its founder's hours?</span><span style="font-family: 'IBM Plex Mono', monospace; font-size: 12px; letter-spacing: 0.1em; color: {{accent}}">RUNNING</span></a>
+<a href="#exp-03" style="text-decoration: none; display: flex; flex-wrap: wrap; align-items: baseline; gap: 6px 24px; padding: 18px 0; border-bottom: 1px solid #1F211E"><span style="font-family: 'IBM Plex Mono', monospace; font-size: 13px; color: #8C9087; flex: 0 0 64px">EXP-03</span><span style="flex: 1 1 420px; font-size: 22px; font-weight: 400">Can a negotiation be won by someone who isn't there?</span><span style="font-family: 'IBM Plex Mono', monospace; font-size: 12px; letter-spacing: 0.1em; color: #E8E8E2">CONCLUDED</span></a>
+<a href="#exp-04" style="text-decoration: none; display: flex; flex-wrap: wrap; align-items: baseline; gap: 6px 24px; padding: 18px 0; border-bottom: 1px solid #1F211E"><span style="font-family: 'IBM Plex Mono', monospace; font-size: 13px; color: #8C9087; flex: 0 0 64px">EXP-04</span><span style="flex: 1 1 420px; font-size: 22px; font-weight: 400">Will she notice which messages weren't written by him?</span><span style="font-family: 'IBM Plex Mono', monospace; font-size: 12px; letter-spacing: 0.1em; color: #8C9087">NOT STARTED</span></a>
+<a href="#exp-05" style="text-decoration: none; display: flex; flex-wrap: wrap; align-items: baseline; gap: 6px 24px; padding: 18px 0; border-bottom: 1px solid #1F211E"><span style="font-family: 'IBM Plex Mono', monospace; font-size: 13px; color: #8C9087; flex: 0 0 64px">EXP-0X</span><span style="flex: 1 1 420px; font-size: 22px; font-weight: 400">[An experiment that failed]</span><span style="font-family: 'IBM Plex Mono', monospace; font-size: 12px; letter-spacing: 0.1em; color: #FF9F5A">TERMINATED</span></a>
+</section>
+
+<section aria-label="Join" style="padding: 96px 0; border-top: 1px solid #1F211E; display: flex; flex-wrap: wrap; gap: 48px">
+<div style="flex: 1 1 420px; display: flex; flex-direction: column; gap: 16px">
+<p style="margin: 0; font-size: 22px; font-weight: 700">Observe</p>
+<p style="margin: 0; font-size: 16px; line-height: 1.55; color: #B4B8AE">One observation log a week. What was delegated, what broke, what's left.</p>
+<div style="display: flex; flex-wrap: wrap; gap: 10px">
+<label for="observe-email" style="position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0)">Your email</label>
+<input id="observe-email" type="email" placeholder="your email" style="flex: 1 1 220px; min-height: 46px; padding: 0 2px; border: none; border-bottom: 1px solid #3A3D37; background: transparent; color: #E8E8E2; font-size: 16px; font-family: 'IBM Plex Mono', monospace">
+<button type="button" style="min-height: 46px; padding: 0 18px; border: 1px solid #E8E8E2; border-radius: 0; background: transparent; color: #E8E8E2; font-family: 'IBM Plex Mono', monospace; font-size: 13px; letter-spacing: 0.12em; cursor: pointer">OBSERVE</button>
+</div>
+</div>
+<div style="flex: 1 1 280px; display: flex; flex-direction: column; gap: 14px; font-size: 16px; line-height: 1.55; color: #B4B8AE">
+<p style="margin: 0"><a href="#vote">Choose the next experiment</a>. Voting closes [date].</p>
+<p style="margin: 0"><a href="#apply">Submit your company to the experiment</a>. [X] slots this month.</p>
+<p style="margin: 0"><a href="https://delegate.onhundred.com">Read the protocol</a>. Every agent, open.</p>
+</div>
+</section>
+
+<footer style="padding: 40px 0 56px; border-top: 1px solid #1F211E; display: flex; flex-wrap: wrap; justify-content: space-between; gap: 16px; font-family: 'IBM Plex Mono', monospace; font-size: 12px; line-height: 1.7; color: #8C9087">
+<p style="margin: 0; max-width: 560px">CONSENT PROTOCOL: everyone involved knows and can stop it. Children are never subjects. No clinical data. Do not try this at home.</p>
+<p style="margin: 0">SUBJECT 001: <a href="https://alesanchezr.com">ALE SÁNCHEZ</a> · <a href="https://4geeks.com">4GEEKS</a></p>
+</footer>
+</div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"accent":{"editor":"color","default":"#C6F432","options":["#C6F432","#E8E8E2","#5AD1FF"]},"stage":{"editor":"enum","default":"map","options":["map","delegate","review"]},"cycle":{"editor":"int","default":1,"min":1,"max":99},"$preview":{"width":1440,"height":2300}}'>
+class Component extends DCLogic {
+constructor(props) {
+super(props);
+this.state = { hover: null, stageHover: null };
+}
+shuffle(arr, seed) {
+let x = seed;
+for (let i = arr.length - 1; i > 0; i--) {
+x = (x * 9301 + 49297) % 233280;
+const j = Math.floor((x / 233280) * (i + 1));
+const t = arr[i]; arr[i] = arr[j]; arr[j] = t;
+}
+return arr;
+}
+fill(mix) {
+const out = [];
+Object.keys(mix).forEach((k) => { for (let i = 0; i < mix[k]; i++) out.push(k); });
+return out;
+}
+rgba(hex, a) {
+const h = hex.replace('#', '');
+const n = parseInt(h.length === 3 ? h.split('').map((c) => c + c).join('') : h, 16);
+return 'rgba(' + ((n >> 16) & 255) + ',' + ((n >> 8) & 255) + ',' + (n & 255) + ',' + a + ')';
+}
+look(state, accent) {
+if (state === 'unmapped') return { bg: 'transparent', line: '#33362F', bstyle: 'dashed' };
+if (state === 'mapped') return { bg: '#1C1F1B', line: '#4A4E45', bstyle: 'solid' };
+if (state === 'assisted') return { bg: this.rgba(accent, 0.25), line: this.rgba(accent, 0.45), bstyle: 'solid' };
+if (state === 'delegated') return { bg: this.rgba(accent, 0.6), line: this.rgba(accent, 0.75), bstyle: 'solid' };
+return { bg: accent, line: accent, bstyle: 'solid' };
+}
+renderVals() {
+const accent = this.props.accent ?? '#C6F432';
+const hover = this.state.hover;
+const sh = this.state.stageHover;
+const stage = this.props.stage ?? 'map';
+const cycle = this.props.cycle ?? 1;
+const mixes = {
+rel: { unmapped: 18, mapped: 8, assisted: 3, delegated: 1, autonomous: 0 },
+per: { unmapped: 16, mapped: 9, assisted: 2, delegated: 2, autonomous: 1 },
+com: { unmapped: 16, mapped: 14, assisted: 3, delegated: 4, autonomous: 3 }
+};
+const seeds = { rel: 7, per: 13, com: 29 };
+const counts = { unmapped: 0, mapped: 0, assisted: 0, delegated: 0, autonomous: 0 };
+const bands = {};
+Object.keys(mixes).forEach((k) => {
+const states = this.shuffle(this.fill(mixes[k]), seeds[k]);
+bands[k] = states.map((st, i) => {
+counts[st] += 1;
+const lk = this.look(st, accent);
+const changed = (i * 7 + seeds[k]) % 9 === 0;
+let show = true;
+if (hover) show = hover === st;
+else if (sh === 'map') show = st === 'unmapped' || st === 'mapped';
+else if (sh === 'delegate') show = st === 'assisted' || st === 'delegated' || st === 'autonomous';
+else if (sh === 'review') show = changed && st !== 'unmapped';
+return { bg: lk.bg, line: lk.line, bstyle: lk.bstyle, op: show ? 1 : 0.06 };
+});
+});
+const labels = [['unmapped', 'UNMAPPED'], ['mapped', 'MAPPED'], ['assisted', 'ASSISTED'], ['delegated', 'DELEGATED'], ['autonomous', 'AUTONOMOUS']];
+const legend = labels.map(([key, label]) => {
+const lk = this.look(key, accent);
+const active = hover === key;
+return {
+label, count: String(counts[key]), bg: lk.bg, line: lk.line, bstyle: lk.bstyle,
+color: hover && !active ? '#5E625A' : '#E8E8E2',
+chipBg: active ? '#1C1F1B' : 'transparent',
+enter: () => this.setState({ hover: key, stageHover: null }),
+leave: () => this.setState({ hover: null })
+};
+});
+const notes = {
+map: 'Map: the parts of a life being discovered and defined.',
+delegate: 'Delegate: parts handed to agents, at any level.',
+review: 'Review: parts that changed this cycle.'
+};
+const defs = [['map', 'MAP'], ['delegate', 'DELEGATE'], ['review', 'REVIEW']];
+const stages = defs.map(([key, label], i) => {
+const isCurrent = key === stage;
+const isHover = key === sh;
+return {
+label,
+arrow: i < defs.length - 1 ? '→' : '',
+current: isCurrent ? 'step' : 'false',
+color: isCurrent ? accent : (isHover ? '#E8E8E2' : '#5E625A'),
+border: isCurrent ? accent : (isHover ? '#5E625A' : 'transparent'),
+enter: () => this.setState({ stageHover: key, hover: null }),
+leave: () => this.setState({ stageHover: null })
+};
+});
+const stageNote = sh ? notes[sh] : 'Now: ' + notes[stage];
+return { accent, cycle, stages, stageNote, rel: bands.rel, per: bands.per, com: bands.com, legend };
+}
+}
+</script>
+</body>
+</html>

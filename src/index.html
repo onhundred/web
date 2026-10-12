@@ -1,0 +1,135 @@
+<!doctype html>
+<html lang="{{t.lang}}">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>{{t.meta.title}}</title>
+<meta name="description" content="{{t.meta.description}}">
+<link rel="canonical" href="{{d.canonical}}">
+<link rel="alternate" hreflang="en" href="{{d.enUrl}}">
+<link rel="alternate" hreflang="es" href="{{d.esUrl}}">
+<link rel="alternate" hreflang="x-default" href="{{d.enUrl}}">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Onhundred">
+<meta property="og:title" content="{{d.ogTitle}}">
+<meta property="og:description" content="{{t.meta.description}}">
+<meta property="og:url" content="{{d.canonical}}">
+<meta property="og:locale" content="{{t.meta.locale}}">
+<meta property="og:image" content="{{d.siteUrl}}/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Onhundred">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#0A0A09">
+<meta name="color-scheme" content="dark">
+<link rel="icon" href="{{d.base}}favicon.ico" sizes="48x48">
+<link rel="icon" href="{{d.base}}favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="{{d.base}}apple-touch-icon.png">
+{{{d.preloads}}}
+<style>{{{d.css}}}</style>
+<script src="{{d.gridJs}}" defer></script>
+</head>
+<body>
+<a class="skip" href="#observe-email">{{t.a11y.skip}}</a>
+
+<header class="masthead wrap">
+  <p class="brand"><span class="brand-on">ON</span>{{t.header.brandTail}}</p>
+  <p class="live"><span class="dot" aria-hidden="true"></span>{{d.live}}{{{d.liveFlag}}}</p>
+</header>
+
+<main>
+  <section class="hero wrap" data-readout data-total="{{d.pct}}" data-total-caption="{{t.hero.figureCaption}}">
+    <h1 class="readout">
+      <span class="figure" data-figure>{{d.pct}}%</span>
+      <span class="caption-row"><span class="caption" data-caption>{{t.hero.figureCaption}}</span>{{{d.heroTag}}}</span>
+    </h1>
+
+    <div class="grid" role="group" aria-label="{{t.a11y.gridLabel}}" style="grid-template-columns: {{d.gridColumns}}" data-grid data-tip="{{d.tip}}">
+{{{d.grid}}}
+    </div>
+
+    <p class="confession"><span>{{t.hero.confession1}}</span> <span>{{t.hero.confession2}}</span></p>
+
+    <form class="observe" action="{{c.observeAction}}" method="post">
+      <label class="sr" for="observe-email">{{t.observe.label}}</label>
+      <input id="observe-email" class="field" name="email" type="email" required autocomplete="email" inputmode="email" placeholder="{{t.observe.placeholder}}">
+      <input type="hidden" name="lang" value="{{t.lang}}">
+      <button class="btn btn-signal" type="submit">{{t.observe.button}}</button>
+      <p class="note">{{t.observe.note}}</p>
+    </form>
+
+    <div class="stages" role="group" aria-label="{{t.stages.label}}">
+{{{d.stages}}}
+    </div>
+    <p class="stage-note" data-stage-note data-default="{{d.stageNote}}" aria-live="polite">{{d.stageNote}}</p>
+  </section>
+
+  <section class="states wrap" aria-labelledby="states-heading">
+    <h2 id="states-heading" class="section-title">{{t.states.heading}}{{{d.legendTag}}}</h2>
+    <ul class="legend" data-legend>
+{{{d.legend}}}
+    </ul>
+  </section>
+
+  <section class="manifesto wrap" aria-labelledby="question">
+    <h2 id="question" class="question">{{t.manifesto.question}}</h2>
+    <div class="manifesto-body">
+      <p>{{t.manifesto.p1}}</p>
+      <p>{{t.manifesto.p2}}</p>
+      <p class="strong">{{t.manifesto.p3}}</p>
+      <p class="signature">{{t.manifesto.signature}}</p>
+    </div>
+  </section>
+
+  <section class="experiments wrap" aria-labelledby="experiments-heading">
+    <h2 id="experiments-heading" class="section-title">{{t.experiments.heading}}{{{d.expTag}}}</h2>
+    <ol class="exp-list">
+{{{d.experiments}}}
+    </ol>
+  </section>
+
+  <section class="join wrap">
+    <div class="join-block">
+      <h2 class="join-title">{{t.join.observeHeading}}</h2>
+      <p class="join-body">{{t.join.observeBody}}</p>
+      <form class="observe observe-repeat" action="{{c.observeAction}}" method="post">
+        <label class="sr" for="observe-email-2">{{t.observe.label}}</label>
+        <input id="observe-email-2" class="field" name="email" type="email" required autocomplete="email" inputmode="email" placeholder="{{t.observe.placeholder}}">
+        <input type="hidden" name="lang" value="{{t.lang}}">
+        <button class="btn btn-signal" type="submit">{{t.observe.button}}</button>
+        <p class="note">{{t.observe.privacy}}</p>
+      </form>
+    </div>
+
+    <div class="join-block">
+      <h2 class="join-title">{{t.join.submitHeading}}</h2>
+      <p class="join-body">{{t.join.submitBody}}</p>
+      <form class="submit" action="{{c.submitAction}}" method="post">
+        <label class="field-label" for="submit-company">{{t.join.company}}</label>
+        <input id="submit-company" class="field" name="company" type="text" required autocomplete="organization" placeholder="{{t.join.companyPlaceholder}}">
+        <label class="field-label" for="submit-email">{{t.join.workEmail}}</label>
+        <input id="submit-email" class="field" name="email" type="email" required autocomplete="email" inputmode="email" placeholder="{{t.join.workEmailPlaceholder}}">
+        <label class="field-label" for="submit-site">{{t.join.website}}</label>
+        <input id="submit-site" class="field" name="website" type="text" autocomplete="url" inputmode="url" placeholder="{{t.join.websitePlaceholder}}">
+        <input type="hidden" name="lang" value="{{t.lang}}">
+        <button class="btn" type="submit">{{t.join.submitButton}}</button>
+      </form>
+    </div>
+
+    <div class="join-block">
+      <h2 class="join-title">{{t.join.protocolHeading}}</h2>
+      <p class="join-body">{{t.join.protocolBody}}</p>
+      <a class="link-cta" href="{{c.protocolUrl}}">{{t.join.protocolLink}}</a>
+{{{d.vote}}}
+    </div>
+  </section>
+</main>
+
+<footer class="footer wrap">
+  <p class="consent">{{t.footer.consent}}</p>
+  <p class="credits">{{t.footer.subject}}: <a href="{{c.subjectUrl}}">ALE SÁNCHEZ</a> · <a href="{{c.fourGeeksUrl}}">4GEEKS</a></p>
+  <p class="tagline">{{t.manifesto.tagline}}</p>
+  <p class="lang-switch"><a href="{{d.otherPath}}" hreflang="{{d.otherLang}}" lang="{{d.otherLang}}">{{t.footer.language}}</a></p>
+</footer>
+</body>
+</html>

@@ -1,0 +1,131 @@
+{
+  "lang": "en",
+  "path": "/",
+  "meta": {
+    "title": "Onhundred: what's left of a person when AI runs his life",
+    "description": "Social Experiment 001. A founder hands his company, his money and the way he cares for the people he loves to AI, in public. Watch what's left of him.",
+    "ogTitle": "{pct}% of him is still him. For now.",
+    "locale": "en_US"
+  },
+  "a11y": {
+    "skip": "Skip to the signup",
+    "gridLabel": "Delegation grid: each square is one loop of his life",
+    "showAll": "Show all areas"
+  },
+  "header": {
+    "brandTail": "HUNDRED · SOCIAL EXPERIMENT 001",
+    "live": "LIVE · CYCLE {cycle} · DAY {day}"
+  },
+  "hero": {
+    "figureCaption": "OF HIM IS STILL HIM",
+    "areaCaptions": {
+      "relationships": "OF HIS RELATIONSHIPS ARE STILL HIS",
+      "personal": "OF HIS PERSONAL LIFE IS STILL HIS",
+      "company": "OF HIS COMPANY IS STILL HIS"
+    },
+    "sample": "SAMPLE",
+    "sampleNote": "Sample data until the log is published",
+    "confession1": "AI nearly destroyed my company.",
+    "confession2": "So I'm handing my life to AI."
+  },
+  "areas": {
+    "relationships": "RELATIONSHIPS",
+    "personal": "PERSONAL",
+    "company": "COMPANY"
+  },
+  "observe": {
+    "label": "Your email",
+    "placeholder": "your email",
+    "button": "OBSERVE",
+    "note": "One observation log a week.",
+    "privacy": "No spam. Unsubscribe in one click."
+  },
+  "stages": {
+    "label": "Cycle stage",
+    "map": "MAP",
+    "delegate": "DELEGATE",
+    "review": "REVIEW",
+    "mapNote": "Map: every loop of his life is found and named.",
+    "delegateNote": "Delegate: loops are handed to agents, a little or completely.",
+    "reviewNote": "Review: what changed this cycle, what broke, what's left."
+  },
+  "states": {
+    "heading": "How much each square belongs to AI",
+    "unmapped": "UNMAPPED",
+    "unmappedNote": "not looked at yet",
+    "mapped": "MAPPED",
+    "mappedNote": "named, still his",
+    "assisted": "ASSISTED",
+    "assistedNote": "Help me.",
+    "delegated": "DELEGATED",
+    "delegatedNote": "Do it, I approve.",
+    "autonomous": "AUTONOMOUS",
+    "autonomousNote": "Do it alone."
+  },
+  "tip": {
+    "private": "Private loop",
+    "flags": {
+      "measuring": "MEASURING",
+      "experimenting": "EXPERIMENTING",
+      "holding": "HOLDING"
+    },
+    "outcomes": {
+      "achieved": "Last stage achieved",
+      "notAchieved": "Last stage not achieved",
+      "terminated": "Last stage terminated",
+      "dropped": "Dropped a level"
+    }
+  },
+  "manifesto": {
+    "question": "What remains of a person when everything is delegated?",
+    "p1": "AI nearly destroyed my company. Yours could be next.",
+    "p2": "So I'm handing my life to AI. All of it: my company, my money, and the way I take care of the people I love.",
+    "p3": "Let's see what's left of me.",
+    "signature": "ALE SÁNCHEZ, SUBJECT 001",
+    "tagline": "DELEGATE AGENCY. RECLAIM YOUR LIFE."
+  },
+  "experiments": {
+    "heading": "EXPERIMENTS",
+    "sample": "SAMPLE",
+    "bet": "BET",
+    "stage": "STAGE {n} · {level}",
+    "status": {
+      "registered": "REGISTERED",
+      "running": "RUNNING",
+      "holding": "HOLDING",
+      "reached": "LEVEL REACHED",
+      "notAchieved": "NOT ACHIEVED",
+      "terminated": "TERMINATED",
+      "concluded": "CONCLUDED"
+    },
+    "conclusion": {
+      "confirmed": "BET CONFIRMED",
+      "refuted": "BET REFUTED",
+      "unclear": "UNCLEAR"
+    }
+  },
+  "join": {
+    "observeHeading": "Watch the number fall",
+    "observeBody": "One observation log a week: what was delegated, what broke, what's left.",
+    "submitHeading": "Put your company in the experiment",
+    "submitBody": "A small number of companies join each cycle. Tell us who you are; we reply to every one.",
+    "company": "Company",
+    "companyPlaceholder": "company name",
+    "workEmail": "Work email",
+    "workEmailPlaceholder": "you@company.com",
+    "website": "Website",
+    "websitePlaceholder": "company.com",
+    "submitButton": "SUBMIT MY COMPANY",
+    "protocolHeading": "Copy the protocol",
+    "protocolBody": "Every agent and every rule of the experiment is open.",
+    "protocolLink": "READ THE PROTOCOL",
+    "vote": "Choose the next experiment",
+    "voteSoon": "Voting on the next experiment opens with Cycle 1."
+  },
+  "footer": {
+    "consent": "CONSENT PROTOCOL: everyone involved knows and can stop it. Children are never subjects. No clinical data. Do not try this at home.",
+    "subject": "SUBJECT 001",
+    "language": "Leer en español",
+    "languageShort": "ES"
+  }
+}

@@ -1,0 +1,9 @@
+{
+  "siteUrl": "https://onhundred.com",
+  "protocolUrl": "https://delegate.onhundred.com",
+  "subjectUrl": "https://alesanchezr.com",
+  "fourGeeksUrl": "https://4geeks.com",
+  "observeAction": "/api/observe",
+  "submitAction": "/api/submit",
+  "voteUrl": ""
+}
