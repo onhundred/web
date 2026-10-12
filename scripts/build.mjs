@@ -4,7 +4,7 @@ import { createHash } from "node:crypto";
 import { mkdir, readFile, rm, writeFile, copyFile, readdir } from "node:fs/promises";
 import { dirname, join } from "node:path";
 import { fileURLToPath } from "node:url";
-import { LEVELS, checkPublic, esc, pickText, publicView, renderGrid } from "../app/lib/protocol.mjs";
+import { LEVELS, changeIsCurrent, checkPublic, esc, pickText, protocol, publicView, renderGrid } from "../app/lib/protocol.mjs";
 
 const root = join(dirname(fileURLToPath(import.meta.url)), "..");
 const src = join(root, "src");
@@ -151,7 +151,22 @@ function partials(t, view, config) {
   const liveFlag = view.sample ? ` · <span class="live-flag">${esc(t.hero.sample)}</span>` : "";
   const legendTag = view.sample ? ` <span class="tag">${esc(t.hero.sample)}</span>` : "";
 
+  // Shown for 1 cycle after the log adopts a new protocol version, as of build time.
+  const change = view.protocolChange;
+  const num = (n) => (lang === "es" ? String(n).replace(".", ",") : String(n));
+  const changeNote = changeIsCurrent(change, new Date().toISOString().slice(0, 10))
+    ? `<p class="change-note">${esc(
+        fill(t.hero.changeNote, {
+          to: change.to,
+          what: protocol.changes?.[change.to]?.[lang] || "",
+          before: num(change.delegatedBefore),
+          after: num(change.delegatedAfter),
+        })
+      )}</p>`
+    : "";
+
   return {
+    changeNote,
     grid: grid.html,
     gridColumns: grid.columns,
     tip: JSON.stringify(tip),

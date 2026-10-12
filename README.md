@@ -27,7 +27,7 @@ The production home page for Social Experiment 001. It is a static, prerendered 
 - `src/brand/`: favicon, apple-touch-icon and the social card, copied from `memory-bank/onhundred-logo-kit/` to the root of `dist/`.
 - `src/_headers`: Cloudflare cache rules. Hashed `/assets/*` files are immutable for a year, brand files cache for a day, HTML always revalidates.
 - `scripts/build.mjs`, `scripts/check-budget.mjs`, `scripts/perf.mjs`: the build, the byte gate and the Lighthouse gate.
-- `scripts/sync-app-assets.mjs`: copies the protocol, `LOOPS.md`, `VOICE.md` and the brand files into `app/`, so the app stays self-contained. Run it after editing any of them.
+- `scripts/sync-app-assets.mjs`: copies the newest `memory-bank/Onhundred Protocol v*.md`, `LOOPS.md`, `VOICE.md` and the brand files into `app/`, so the app stays self-contained. Run it after editing any of them. It stops if the newest protocol file and `app/protocol.json` disagree on the version.
 - `reference/`: the original design mockup, kept for reference only. It is not deployed.
 - `DESIGN.md`, `PRODUCT.md`, `.impeccable/`: the design system, the product brief and the approved comp.
 
@@ -55,3 +55,20 @@ Each square on the grid is one loop: a recurring responsibility, with a code lik
 Set the build command to `npm run build` and the output directory to `dist`. Node 20 or newer is required. Set `LOG_URL` in the production environment variables.
 
 The forms post to `/api/observe` and `/api/submit`. Point them at real endpoints (for example Pages Functions) in `src/config.json` before launch.
+
+## Releasing the app
+
+Installs don't follow `main`. Each install's **Update from template** workflow (`app/.github/workflows/update-from-template.yml`) looks for the newest tag named `app-vX.Y.Z` and opens a pull request with it. Publishing an update is one deliberate step:
+
+```bash
+npm run build && npm test && (cd app && npm test)
+gh release create app-v1.1.0 --title "App v1.1.0" --notes "Protocol v1.1: assisted counts half in Delegated; decide and choose fail as loop names."
+```
+
+The release notes are what owners read before merging, so say what changes for them. When a release ships a new protocol version:
+
+1. Add `memory-bank/Onhundred Protocol vX.Y.md` with its changelog entry, and set `version` in `app/protocol.json` to match.
+2. Version the rule changes in `app/protocol.json` (`naming.since`, `metrics.assistedWeight`, `changes`), so logs that haven't adopted it keep the old rules.
+3. Run `npm run sync-app`.
+
+Database changes are additive only (new tables or columns, never `DROP` or `RENAME`), so an install can always roll back to older code. A test checks it.

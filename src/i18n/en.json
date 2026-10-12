@@ -25,6 +25,7 @@
     },
     "sample": "SAMPLE",
     "sampleNote": "Sample data until the log is published",
+    "changeNote": "Protocol v{to}: {what}. Delegated went from {before} to {after} with no change in loops.",
     "confession1": "AI nearly destroyed my company.",
     "confession2": "So I'm handing my life to AI."
   },

@@ -1,15 +1,27 @@
 // Copies the protocol, LOOPS.md, VOICE.md and brand files into app/, so the one-click
 // template stays self-contained (the Deploy button clones only app/).
-import { copyFile, mkdir, readFile, writeFile } from "node:fs/promises";
+import { copyFile, mkdir, readFile, readdir, writeFile } from "node:fs/promises";
 import { dirname, join } from "node:path";
 import { fileURLToPath } from "node:url";
+import { compareVersions, protocol as P } from "../app/lib/protocol.mjs";
 
 const root = join(dirname(fileURLToPath(import.meta.url)), "..");
 const app = join(root, "app");
 const kit = join(root, "memory-bank", "onhundred-logo-kit");
 
+// The newest "Onhundred Protocol vX.Y.md", which must be the version app/protocol.json enforces.
+const PROTOCOL_RE = /^Onhundred Protocol v(\d+(?:\.\d+)*)\.md$/;
+const newest = (await readdir(join(root, "memory-bank")))
+  .map((f) => [f, PROTOCOL_RE.exec(f)?.[1]])
+  .filter(([, v]) => v)
+  .sort((a, b) => compareVersions(a[1], b[1]))
+  .at(-1);
+if (!newest) throw new Error("memory-bank/ has no Onhundred Protocol v*.md file.");
+if (newest[1] !== P.version)
+  throw new Error(`memory-bank/${newest[0]} is v${newest[1]}, but app/protocol.json enforces v${P.version}. Update one to match.`);
+
 const docs = {
-  protocol: ["Onhundred Protocol v1.0.md", "protocol.md"],
+  protocol: [newest[0], "protocol.md"],
   loops: ["LOOPS.md", "LOOPS.md"],
   voice: ["VOICE.md", "VOICE.md"],
 };
@@ -39,4 +51,4 @@ await writeFile(
 );
 for (const [from, to] of brand) await copyFile(join(kit, from), join(app, "public", to));
 
-console.log("synced app/docs, app/src/docs.mjs and app/public brand files");
+console.log("synced app/docs, app/src/docs.mjs and app/public brand files from", newest[0]);

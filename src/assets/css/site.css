@@ -196,6 +196,8 @@ button { font: inherit; color: inherit; }
 .grid[data-show="delegated"] .cell:not([data-s="delegated"]),
 .grid[data-show="autonomous"] .cell:not([data-s="autonomous"]) { opacity: 0.08; }
 
+.change-note { margin: 12px 0 0; max-width: 46ch; font-size: 14px; line-height: 1.4; color: var(--faded-bone); }
+
 /* Confession + Observe */
 .confession { margin-top: 24px; font-size: clamp(14px, 3.6vw, 22px); line-height: 1.4; max-width: 34ch; }
 .confession span { display: block; }
@@ -336,6 +338,7 @@ button { font: inherit; color: inherit; }
     grid-template-columns: minmax(0, 1fr) minmax(0, 1.05fr);
     grid-template-areas:
       "readout grid"
+      "change grid"
       "confession grid"
       "observe grid"
       "stages stages"
@@ -351,6 +354,7 @@ button { font: inherit; color: inherit; }
   .cells { row-gap: 7px; }
   .area-label { font-size: 12px; }
   .confession { grid-area: confession; margin-top: 40px; font-size: 22px; }
+  .change-note { grid-area: change; }
   .observe { max-width: 520px; }
   .hero > .observe { grid-area: observe; margin-top: 22px; }
   .stages { grid-area: stages; margin-top: 56px; }

@@ -16,7 +16,8 @@ Stranger, done, action, one-rule, everyone-has-one and ceiling. If it fails one,
 
 - A verb and an object, 8 words or fewer, in every language of the log.
 - No names of people and no identifying details. "My partner," never her name.
-- Never start with: remember, remind, track, monitor, keep an eye on, stay on top of, think about, prepare, review, manage, handle.
+- Name the output, not the decision behind it: "Get weeknight dinner on the table," not "Decide what's for dinner."
+- Never start with: decide, choose, remember, remind, track, monitor, keep an eye on, stay on top of, think about, prepare, review, manage, handle. `validate()` enforces these by the log's protocol version: decide and choose fail from v1.1 (`naming.since` in [app/protocol.json](mdc:app/protocol.json)).
 
 ## Storage (`app/seed/loops.json`, D1 `loops` in the app)
 

@@ -25,6 +25,7 @@
     },
     "sample": "MUESTRA",
     "sampleNote": "Datos de muestra hasta publicar la bitácora",
+    "changeNote": "Protocolo v{to}: {what}. Delegado pasó de {before} a {after} sin cambios en los loops.",
     "confession1": "La IA casi destruye mi empresa.",
     "confession2": "Así que le entrego mi vida a la IA."
   },
